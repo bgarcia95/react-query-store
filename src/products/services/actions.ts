@@ -23,6 +23,7 @@ export const getProduct = async (id: number): Promise<Product> => {
 
 export const createProduct = async (product: Omit<Product, "id">) => {
   await sleep(5);
+  // throw new Error("Error creating product");
   const { data } = await productsApi.post<Product>("/products", product);
   return data;
 };
